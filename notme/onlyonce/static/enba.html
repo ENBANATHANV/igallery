@@ -1,34 +1,8 @@
-# Ex.08 Design of Interactive Image Gallery
-## Date:
-
-## AIM:
-To design a web application for an inteactive image gallery with minimum five images.
-
-## DESIGN STEPS:
-
-### Step 1:
-Clone the github repository and create Django admin interface.
-
-### Step 2:
-Change settings.py file to allow request from all hosts.
-
-### Step 3:
-Use CSS for positioning and styling.
-
-### Step 4:
-Write JavaScript program for implementing interactivity.
-
-### Step 5:
-Validate the HTML and CSS code.
-
-### Step 6:
-Publish the website in the given URL.
-
-## PROGRAM :
-```
-<html >
+<html lang="en">
   <head>
-   
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Gallery</title>
     
     <style>
@@ -112,20 +86,21 @@ Publish the website in the given URL.
       let images = document.querySelectorAll(".img-gallery img");
       let wrapper = document.getElementById("wrapper");
       let imgWrapper = document.getElementById("fullImg");
-      let close = document.querySelector("#wrapper span"); 
+      let close = document.querySelector("#wrapper span"); // More specific selection for close button
 
       // Loop through each image and add click event
       images.forEach((img, index) => {
         img.addEventListener("click", () => {
-          openModal(`img${index + 1}.jpg`);
+          openModal(`img${index + 1}.jpg`); // Adjusted image path to match img1.jpg, img2.jpg, etc.
         });
       });
 
-     
+      // Close the modal when X is clicked
       close.addEventListener("click", () => {
         wrapper.style.display = "none";
       });
 
+      // Function to open the modal and set the image source
       function openModal(pic) {
         wrapper.style.display = "flex";
         imgWrapper.src = pic; // Update the source of the modal image
@@ -133,16 +108,3 @@ Publish the website in the given URL.
     </script>
   </body>
 </html>
-
-```
-
-## OUTPUT:
-![alt text](<Screenshot (135)-1.png>)
-![alt text](<Screenshot (136).png>)
-![alt text](<Screenshot (137).png>)
-![alt text](<Screenshot (138).png>)
-![alt text](<Screenshot (139).png>)
-![alt text](<Screenshot (140).png>)
-
-## RESULT:
-The program for designing an interactive image gallery using HTML, CSS and JavaScript is executed successfully.
